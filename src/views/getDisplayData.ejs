@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>get data</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    
+    .btn-edit {
+        border-radius: 3px;
+        width: 60px;
+        height: 25px;
+        background-color: orange;
+        cursor: pointer;
+    }
+    
+    .btn-delete {
+        border-radius: 3px;
+        width: 60px;
+        height: 25px;
+        background-color: red;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <h2>bảng hiển thị dữ liệu</h2>
+
+    <table style="width:100%">
+        <tr>
+            <th>email </th>
+            <th>firstName </th>
+            <th>lastName </th>
+            <th>address</th>
+            <th>action</th>
+
+
+
+
+
+        </tr>
+
+        <% for(var i=0; i < dataRender.length; i++) { %>
+            <tr>
+                <td>
+                    <%= dataRender[i].email %>
+                </td>
+                <td>
+                    <%= dataRender[i].firstName %>
+                </td>
+                <td>
+                    <%= dataRender[i].lastName %>
+                </td>
+                <td>
+                    <%= dataRender[i].address %>
+                </td>
+                <td>
+                    <a type="button" class="btn-edit" href="/edit-crud?id=<%= dataRender[i].id %>"> edit </a>
+                    <a type="button" class="btn-delete" href="/delete-crud?id=<%= dataRender[i].id %>"> delete </a>
+                </td>
+
+            </tr>
+            <%} %>
+    </table>
+
+
+    <body>
+
+    </body>
+
+</html>
